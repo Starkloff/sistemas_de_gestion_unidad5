@@ -5,6 +5,7 @@ public class Doctor {
 	
 	private String nombre;
 	private String estado;
+	private Especialidad especialidad;
 	
 	public Doctor(String estado, String nombre) {
 		super();
@@ -22,6 +23,14 @@ public class Doctor {
 
 	public String getEstado() {
 		return estado;
+	}
+
+	public Especialidad getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
 	}
 
 	public void setEstado(String estado) {
