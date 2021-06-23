@@ -83,3 +83,21 @@ rule "OSPIP rule"
         cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
 end
 
+/*
+	Por el dia internacional de lucha contra el Cáncer de Mama (19 de octubre) se decidio que durante todo el mes
+	se aplicara un 50% de descuento a las mujeres que tienen un turno con el MASTOLOGO.
+	Mastologo: La mastología o senología​ es una especialidad médica que se dedica al estudio de las glándulas mamarias
+*/
+rule "Breast cancer rule"
+	salience 20
+	date-effective "01-OCT-2021"
+	date-expires "01-NOV-2021"
+	// Para comprobar el funcionamiento de la regla podriamos cambiar la fecha de la pc a algun dia de octubre (o cambiamos OCT por JUN)
+	when
+		cierre : Cierre();
+		especialidad: Especialidad(nombre == "MASTOLOGO") from cierre.getTurnos().getEspecialidad();
+		paciente: Paciente( sexo == 'F') from cierre.getTurnos().getPaciente();
+	then
+		cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (50 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end

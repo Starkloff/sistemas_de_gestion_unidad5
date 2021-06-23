@@ -43,6 +43,14 @@ public class Turnos {
 		this.obraSocial = obraSocial;
 		this.importe = importe;
 	}
+	
+	public Turnos(int id_turno,Paciente paciente,Especialidad especialidad ,double importe) {
+		super();
+		this.id_turno = id_turno;
+		this.paciente = paciente;
+		this.importe = importe;
+		this.especialidad = especialidad;
+	}
 
 	public ObraSocial getObraSocial() {
 		return obraSocial;

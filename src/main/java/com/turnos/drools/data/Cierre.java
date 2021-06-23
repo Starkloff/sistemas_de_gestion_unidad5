@@ -37,5 +37,4 @@ public class Cierre {
 	public void setTurnos(Turnos turno) {
 		this.turno = turno;
 	}
-	
 }

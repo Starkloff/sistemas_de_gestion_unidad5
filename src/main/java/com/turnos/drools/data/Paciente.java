@@ -1,40 +1,46 @@
 package com.turnos.drools.data;
 
 public class Paciente {
-
-	public static final int DEFAULT_CUSTOMER = 0;
-	public static final int SILVER_CUSTOMER = 1;
-	public static final int GOLD_CUSTOMER = 2;
+	private int estado;
+	private String nombre;
+	private Character sexo;
 	
-	private int status;
-	
-	private String name;
-	
-	public Paciente(int status, String name) {
+	public Paciente(int estado,String nombre,char sexo) {
 		super();
-		this.status = status;
-		this.name = name;
+		this.estado=estado;
+		this.nombre=nombre;
+		this.sexo=sexo;
 	}
-
-	public int getStatus() {
-		return status;
+	public Paciente(String nombre,char sexo) {
+		super();
+		this.nombre = nombre;
+		this.sexo = sexo;
 	}
-
-	public void setStatus(int status) {
-		this.status = status;
+	
+	public int getEstado () {
+		return this.estado;
 	}
-
-	public String getName() {
-		return name;
+	public void setEstado(int estado) {
+		this.estado=estado;
 	}
-
-	public void setName(String name) {
-		this.name = name;
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public Character getSexo() {
+		return this.sexo;
+	}
+	
+	public void setSexo(Character sexo) {
+		this.sexo = sexo;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [status=" + status + ", name=" + name + "]";
+		return "Customer [status=" + this.estado + ", name=" + this.nombre+ "]";
 	}
-	
 }
