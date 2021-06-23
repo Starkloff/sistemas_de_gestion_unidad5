@@ -1,4 +1,4 @@
-package com.autentia.tutorial.drools.data;
+package com.turnos.drools.data;
 
 public class Product {
 

@@ -1,4 +1,4 @@
-package com.autentia.tutorial.drools.data;
+package com.turnos.drools.data;
 
 import java.util.Date;
 
@@ -11,16 +11,45 @@ public class Turnos {
 	private Paciente paciente;
 	private Doctor doctor;
 	private Especialidad especialidad;
+	private ObraSocial obraSocial;
 	private boolean diferido;
 	private boolean facturado;
 	private int orden;
 	private int codigodoc;
 	private double importe;
 	private int id_estado;
-
-	public Turnos(Paciente paciente) {
+	
+	public Turnos(int id_turno, Date fecha_tur, Paciente paciente, Doctor doctor, Especialidad especialidad,
+			ObraSocial obraSocial, boolean diferido, boolean facturado, int orden, int codigodoc, double importe,
+			int id_estado) {
 		super();
+		this.id_turno = id_turno;
+		this.fecha_tur = fecha_tur;
 		this.paciente = paciente;
+		this.doctor = doctor;
+		this.especialidad = especialidad;
+		this.obraSocial = obraSocial;
+		this.diferido = diferido;
+		this.facturado = facturado;
+		this.orden = orden;
+		this.codigodoc = codigodoc;
+		this.importe = importe;
+		this.id_estado = id_estado;
+	}
+
+	public Turnos(int id_turno, ObraSocial obraSocial, double importe) {
+		super();
+		this.id_turno = id_turno;
+		this.obraSocial = obraSocial;
+		this.importe = importe;
+	}
+
+	public ObraSocial getObraSocial() {
+		return obraSocial;
+	}
+
+	public void setObraSocial(ObraSocial obraSocial) {
+		this.obraSocial = obraSocial;
 	}
 
 	public Paciente getPaciente() {

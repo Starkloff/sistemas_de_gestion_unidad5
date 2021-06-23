@@ -1,54 +1,85 @@
-package com.autentia.tutorial.drools
+package com.turnos.drools
 
-import com.autentia.tutorial.drools.data.*;
+import com.turnos.drools.data.*;
 
 // Sumamos el importe total de los productos
 
 dialect "mvel"
 
-rule "Initial rule"
-	salience 20
-    when
-        order : Order ();
-        totalPrice : Double() from accumulate (
-        	Product( productPrice : price) from order.getProducts, 
-        	init (double total = 0;), 
-        	action (total += productPrice;), 
-        	result (new Double(total))
-        ); 
-    then 
-    	order.setTotalPrice(totalPrice);
-end
-
-// Comprobamos si el cliente es SILVER, si es así aplicamos un 5% de descuento
-rule "SILVER customer rule"
+// Comprobamos si la obra social del turno es OSMATA, si es así aplicamos un 50% de descuento
+rule "OSMATA rule"
 	salience 15
 	when
-        order : Order ();
-        customer : Customer ( status == Customer.SILVER_CUSTOMER) from order.getCustomer(); 
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "OSMATA") from cierre.getTurnos().getObraSocial(); 
     then
-        order.setTotalPrice(order.getTotalPrice() * (1 - (5 / 100d) ) );
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (50 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
 end
 
-// Comprobamos si el cliente es GOLD, si es así aplicamos un 10% de descuento
-rule "GOLD customer rule"
+// Comprobamos si la obra social del turno es OSPE, si es así aplicamos un 80% de descuento
+rule "OSPE rule"
 	salience 15
 	when
-        order : Order ();
-        customer : Customer ( status == Customer.GOLD_CUSTOMER) from order.getCustomer(); 
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "OSPE") from cierre.getTurnos().getObraSocial(); 
     then
-    	order.setTotalPrice(order.getTotalPrice() * (1 - (10 / 100d) ) );
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (20 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
 end
 
-// Comprobamos si el pedido tiene 10 o más productos, si es así aplicamos un 15% de descuento
-// Esta regla solo será aplicada en Septiembre de 2012
-rule "Number of products rule"	
-	salience 10	
-	date-effective "01-SEP-2012"
-	date-expires "01-OCT-2012"
+// Comprobamos si la obra social del turno es OSPE, si es así aplicamos un 70% de descuento
+rule "OSPE rule not active"
+	salience 10
 	when
-        order : Order (products.size() >= 10);
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "OSPE") from cierre.getTurnos().getObraSocial(); 
     then
-    	order.setTotalPrice(order.getTotalPrice() * (1 - (15 / 100d) ) );
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (30 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+// Comprobamos si la obra social del turno es OSDE, si es así aplicamos un 30% de descuento
+rule "OSDE rule"
+	salience 15
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "OSDE") from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (70 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+// Comprobamos si la obra social del turno es OSPIA, si es así aplicamos un 23% de descuento
+rule "OSPIA rule"
+	salience 15
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "OSPIA") from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (77 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+// Comprobamos si la obra social del turno es PAMI, si es así aplicamos un 21% de descuento
+rule "PAMI rule"
+	salience 15
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "PAMI") from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (79 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+// Comprobamos si la obra social del turno es OSPIP, si es así aplicamos un 95% de descuento
+rule "OSPIP rule"
+	salience 15
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "OSPIP") from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (5 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
 end
 
