@@ -38,7 +38,7 @@ public class TurnosTest {
 
 		for (int i = 0; i < pacientes.size(); i++) {
 			Especialidad especialidad = new Especialidad(1, "Mastologo");
-			Turnos turno = new Turnos(i, pacientes.get(i), especialidad, 4500);
+			Turnos turno = new Turnos(i+7, pacientes.get(i), especialidad, 4500);
 			Cierre cierre = new Cierre(turno.getImporte(), turno.getImporte(), 0, turno);
 			cierres.add(cierre);
 		}
@@ -47,7 +47,7 @@ public class TurnosTest {
 		solteras.add(new Paciente("Jenny", 'F', 6, "Soltera", new Departamento(2, "Guaymallen")));
 
 		for (int i = 0; i < solteras.size(); i++) {
-			Turnos turno = new Turnos(i, solteras.get(i), 8888);
+			Turnos turno = new Turnos(i+10, solteras.get(i), 8888);
 			Cierre cierre = new Cierre(turno.getImporte(), turno.getImporte(), 0, turno);
 			cierres.add(cierre);
 		}
@@ -57,7 +57,7 @@ public class TurnosTest {
 		abuelos.add(new Paciente("Holga", 75, new Departamento(3, "San Rafael")));
 
 		for (int i = 0; i < abuelos.size(); i++) {
-			Turnos turno = new Turnos(i, abuelos.get(i), new Especialidad(1, "Neumologia"), 20000);
+			Turnos turno = new Turnos(i+11, abuelos.get(i), new Especialidad(1, "Neumologia"), 20000);
 			Cierre cierre = new Cierre(turno.getImporte(), turno.getImporte(), 0, turno);
 			cierres.add(cierre);
 		}
@@ -70,7 +70,7 @@ public class TurnosTest {
 
 			Especialidad especialidad = new Especialidad(1, "Cirugia plastica");
 
-			Turnos turno = new Turnos(i, cirugia_plastica.get(i), especialidad, 35000);
+			Turnos turno = new Turnos(i+12, cirugia_plastica.get(i), especialidad, 35000);
 			Cierre cierre = new Cierre(turno.getImporte(), turno.getImporte(), 0, turno);
 			cierres.add(cierre);
 		}
