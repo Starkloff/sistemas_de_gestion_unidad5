@@ -17,7 +17,6 @@ public class Turnos {
 	private int orden;
 	private int codigodoc;
 	private double importe;
-	private int id_estado;
 	
 	public Turnos(int id_turno, Date fecha_tur, Paciente paciente, Doctor doctor, Especialidad especialidad,
 			ObraSocial obraSocial, boolean diferido, boolean facturado, int orden, int codigodoc, double importe,
@@ -34,7 +33,6 @@ public class Turnos {
 		this.orden = orden;
 		this.codigodoc = codigodoc;
 		this.importe = importe;
-		this.id_estado = id_estado;
 	}
 	
 	public Turnos(int id_turno,Paciente paciente,Especialidad especialidad ,double importe) {
@@ -149,12 +147,4 @@ public class Turnos {
 		this.importe = importe;
 	}
 
-	public int getId_estado() {
-		return id_estado;
-	}
-
-	public void setId_estado(int id_estado) {
-		this.id_estado = id_estado;
-	}
-	
 }
