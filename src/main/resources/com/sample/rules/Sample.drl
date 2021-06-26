@@ -1,0 +1,163 @@
+package com.sample.rules
+
+import com.sample.data.*;
+
+// Comprobamos si la obra social del turno es OSMATA, si es así aplicamos un 50% de descuento
+rule "OSMATA rule"
+	salience 15
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "OSMATA") from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (50 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+// Comprobamos si la obra social del turno es OSPE, si es así aplicamos un 80% de descuento
+rule "Private rule"
+	salience 15
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial (esPrivado) from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (20 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+// Una vez aplicado el descuento se aplican impuestos adicionales
+rule "Private rule Impuestos"
+	salience 10
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial (esPrivado) from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoSinCubrir( cierre.getMontoSinCubrir() + cierre.getMontoTotal()*0.2);
+end
+
+// Comprobamos si la obra social del turno es OSDE, si es así aplicamos un 30% de descuento
+rule "OSDE rule"
+	salience 15
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "OSDE") from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (70 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+// Comprobamos si la obra social del turno es OSPIA, si es así aplicamos un 23% de descuento
+rule "OSPIA rule"
+	salience 15
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "OSPIA") from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (77 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+// Comprobamos si la obra social del turno es PAMI, si es así aplicamos un 21% de descuento
+rule "PAMI rule"
+	salience 15
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "PAMI") from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (79 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+// Comprobamos si la obra social del turno es OSPIP, si es así aplicamos un 95% de descuento
+rule "OSPIP rule"
+	salience 15
+	when
+        cierre : Cierre ();
+        obraSocial : ObraSocial ( nombre == "OSPIP") from cierre.getTurnos().getObraSocial(); 
+    then
+        cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (5 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+/*
+	Por el dia internacional de lucha contra el Cáncer de Mama (19 de octubre) se decidio que durante todo el mes
+	se aplicara un 50% de descuento a las mujeres que tienen un turno con el MASTOLOGO.
+	Mastologo: La mastología o senología​ es una especialidad médica que se dedica al estudio de las glándulas mamarias
+*/
+
+rule "Breast cancer rule"
+	salience 25
+	date-effective "01-OCT-2021"
+	date-expires "01-NOV-2021"
+	// Para comprobar el funcionamiento de la regla podriamos cambiar la fecha de la pc a algun dia de octubre (o cambiamos JUN por OCT)
+	when
+		cierre : Cierre();
+		especialidad: Especialidad(nombre == "Mastologo") from cierre.getTurnos().getEspecialidad();
+		paciente: Paciente( sexo == 'F') from cierre.getTurnos().getPaciente();
+	then
+		cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (50 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+/*
+	Debido a la situacion economica del pais se ha decido que a todas las mujeres
+	solteras que tengan mas de 4 hijos y vivan en algun barrio marginado
+	(Las heras, el algarrobal, guaymallen) de la provincia de mendoza se les aplicara
+	un 25 % de descuento en cualquier tipo de turno
+*/
+
+
+rule "Single woman rule"
+	salience 30
+	when
+		cierre : Cierre();
+		paciente: Paciente(sexo == 'F') from cierre.getTurnos().getPaciente();
+		estadoCivil: Paciente (estadoCivil == "Soltera") from paciente;
+		Paciente( numHijos >= 4)  from paciente;
+		departamento: Departamento( nombre == "Las Heras" || nombre == "Guaymallen" || nombre == "El algarrobal") from paciente.getDepartamento();
+	then
+		cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (50 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+/*
+	Para cuidar a nuestros abuelos en esta situacion de pandemia se ofrecera un 30% de descuento a
+	las personas mayores de 65 años que pidan un turno con un especialista de Neumología o Cardiologia
+	(efectos del COVID) en los barrios mas afectados por el mismo. (Guaymallén, Godoy Cruz, Las Heras,
+	San Rafael) durante todo el año 2021.
+	
+	Casos en los departamentos:
+		Guaymallén 19.870
+		Godoy Cruz 15.224
+		Las Heras  15.102
+		San Rafael 14.661
+*/
+
+rule "Retired COVID rule"
+	date-effective "01-JAN-2021"
+	date-expires "01-JAN-2022"
+	when
+		cierre: Cierre();
+		paciente: Paciente ( edad > 65 ) from cierre.getTurnos().getPaciente();
+		departamento: Departamento( nombre == "Guaymallen" || nombre == "Godoy Cruz" || nombre == "Las Heras" || nombre == "San Rafael" ) from paciente.getDepartamento();
+		especialidad: Especialidad(nombre == "Neumologia" || nombre == "Cardilogia") from cierre.getTurnos().getEspecialidad();
+	then
+		cierre.setMontoCubiertoObrasSociales(cierre.getMontoCubiertoObrasSociales() * (1 - (50 / 100d) ) );
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() - cierre.getMontoCubiertoObrasSociales());
+end
+
+/*
+	Debido a la poca cantidad de camas en los hospitales todas las personas que pidan un turno con una cirugano
+	plastico y tengan menos de 30 años deberan pagar un 50% mas. Esto es para obstaculizar la realizacion de las mismas
+	y dejar disponibles camas para la gente que lo necesita.
+*/
+
+
+rule "Plastic surgery rule"
+	when
+		cierre: Cierre();
+		paciente: Paciente ( edad < 30 ) from cierre.getTurnos().getPaciente();
+		especialidad: Especialidad(nombre == "Cirugia plastica") from cierre.getTurnos().getEspecialidad();
+	then
+		cierre.setMontoCubiertoObrasSociales(0);
+        cierre.setMontoSinCubrir( cierre.getMontoTotal() * (1 + (50 / 100d) ));
+end

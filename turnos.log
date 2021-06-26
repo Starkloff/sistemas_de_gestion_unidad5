@@ -1,0 +1,312 @@
+<object-stream>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>1</factId>
+      <objectToString>com.sample.data.Cierre@659925f4</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>2</factId>
+      <objectToString>com.sample.data.Cierre@6d4a65c6</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>3</factId>
+      <objectToString>com.sample.data.Cierre@aa004a0</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>4</factId>
+      <objectToString>com.sample.data.Cierre@4c98a6d5</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>5</factId>
+      <objectToString>com.sample.data.Cierre@392a04e7</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>6</factId>
+      <objectToString>com.sample.data.Cierre@7f02251</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>7</factId>
+      <objectToString>com.sample.data.Cierre@dffa30b</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>8</factId>
+      <objectToString>com.sample.data.Cierre@4d8126f</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>9</factId>
+      <objectToString>com.sample.data.Cierre@6d3c232f</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>10</factId>
+      <objectToString>com.sample.data.Cierre@6b587673</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>11</factId>
+      <objectToString>com.sample.data.Cierre@1bcf67e8</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>12</factId>
+      <objectToString>com.sample.data.Cierre@5f404594</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Single woman rule [10, 15, 20, 21, 22]</activationId>
+      <rule>Single woman rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@6b587673; departamento=com.sample.data.Departamento@173373b4; estadoCivil=com.sample.data.Paciente@7d755813; paciente=com.sample.data.Paciente@7d755813</declarations>
+      <factHandleIds>10,15,20,21,22</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Single woman rule [10, 15, 20, 21, 22]</activationId>
+      <rule>Single woman rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@6b587673; departamento=com.sample.data.Departamento@173373b4; estadoCivil=com.sample.data.Paciente@7d755813; paciente=com.sample.data.Paciente@7d755813</declarations>
+      <factHandleIds>10,15,20,21,22</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Single woman rule [10, 15, 20, 21, 22]</activationId>
+      <rule>Single woman rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@6b587673; departamento=com.sample.data.Departamento@173373b4; estadoCivil=com.sample.data.Paciente@7d755813; paciente=com.sample.data.Paciente@7d755813</declarations>
+      <factHandleIds>10,15,20,21,22</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Breast cancer rule [9, 25, 28]</activationId>
+      <rule>Breast cancer rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@6d3c232f; especialidad=com.sample.data.Especialidad@50d3bf39; paciente=com.sample.data.Paciente@69c93ca4</declarations>
+      <factHandleIds>9,25,28</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Breast cancer rule [8, 26, 27]</activationId>
+      <rule>Breast cancer rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@4d8126f; especialidad=com.sample.data.Especialidad@25a73de1; paciente=com.sample.data.Paciente@63da207f</declarations>
+      <factHandleIds>8,26,27</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>OSMATA rule [1, 35]</activationId>
+      <rule>OSMATA rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@659925f4; obraSocial=com.sample.data.ObraSocial@51827393</declarations>
+      <factHandleIds>1,35</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>OSMATA rule [3, 33]</activationId>
+      <rule>OSMATA rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@aa004a0; obraSocial=com.sample.data.ObraSocial@260f2144</declarations>
+      <factHandleIds>3,33</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>OSMATA rule [1, 35]</activationId>
+      <rule>OSMATA rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@659925f4; obraSocial=com.sample.data.ObraSocial@51827393</declarations>
+      <factHandleIds>1,35</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>OSMATA rule [1, 35]</activationId>
+      <rule>OSMATA rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@659925f4; obraSocial=com.sample.data.ObraSocial@51827393</declarations>
+      <factHandleIds>1,35</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>OSMATA rule [3, 33]</activationId>
+      <rule>OSMATA rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@aa004a0; obraSocial=com.sample.data.ObraSocial@260f2144</declarations>
+      <factHandleIds>3,33</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>OSMATA rule [3, 33]</activationId>
+      <rule>OSMATA rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@aa004a0; obraSocial=com.sample.data.ObraSocial@260f2144</declarations>
+      <factHandleIds>3,33</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Private rule Impuestos [2, 41]</activationId>
+      <rule>Private rule Impuestos</rule>
+      <declarations>cierre=com.sample.data.Cierre@6d4a65c6; obraSocial=com.sample.data.ObraSocial@3c017078</declarations>
+      <factHandleIds>2,41</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Private rule Impuestos [2, 41]</activationId>
+      <rule>Private rule Impuestos</rule>
+      <declarations>cierre=com.sample.data.Cierre@6d4a65c6; obraSocial=com.sample.data.ObraSocial@3c017078</declarations>
+      <factHandleIds>2,41</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Private rule Impuestos [2, 41]</activationId>
+      <rule>Private rule Impuestos</rule>
+      <declarations>cierre=com.sample.data.Cierre@6d4a65c6; obraSocial=com.sample.data.ObraSocial@3c017078</declarations>
+      <factHandleIds>2,41</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>OSDE rule [4, 46]</activationId>
+      <rule>OSDE rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@4c98a6d5; obraSocial=com.sample.data.ObraSocial@26ae880a</declarations>
+      <factHandleIds>4,46</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>OSDE rule [4, 46]</activationId>
+      <rule>OSDE rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@4c98a6d5; obraSocial=com.sample.data.ObraSocial@26ae880a</declarations>
+      <factHandleIds>4,46</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>OSDE rule [4, 46]</activationId>
+      <rule>OSDE rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@4c98a6d5; obraSocial=com.sample.data.ObraSocial@26ae880a</declarations>
+      <factHandleIds>4,46</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>OSPIA rule [5, 52]</activationId>
+      <rule>OSPIA rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@392a04e7; obraSocial=com.sample.data.ObraSocial@3afae281</declarations>
+      <factHandleIds>5,52</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>OSPIA rule [5, 52]</activationId>
+      <rule>OSPIA rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@392a04e7; obraSocial=com.sample.data.ObraSocial@3afae281</declarations>
+      <factHandleIds>5,52</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>OSPIA rule [5, 52]</activationId>
+      <rule>OSPIA rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@392a04e7; obraSocial=com.sample.data.ObraSocial@3afae281</declarations>
+      <factHandleIds>5,52</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>PAMI rule [6, 58]</activationId>
+      <rule>PAMI rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@7f02251; obraSocial=com.sample.data.ObraSocial@771db12c</declarations>
+      <factHandleIds>6,58</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>PAMI rule [6, 58]</activationId>
+      <rule>PAMI rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@7f02251; obraSocial=com.sample.data.ObraSocial@771db12c</declarations>
+      <factHandleIds>6,58</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>PAMI rule [6, 58]</activationId>
+      <rule>PAMI rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@7f02251; obraSocial=com.sample.data.ObraSocial@771db12c</declarations>
+      <factHandleIds>6,58</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>OSPIP rule [7, 64]</activationId>
+      <rule>OSPIP rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@dffa30b; obraSocial=com.sample.data.ObraSocial@29852487</declarations>
+      <factHandleIds>7,64</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>OSPIP rule [7, 64]</activationId>
+      <rule>OSPIP rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@dffa30b; obraSocial=com.sample.data.ObraSocial@29852487</declarations>
+      <factHandleIds>7,64</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>OSPIP rule [7, 64]</activationId>
+      <rule>OSPIP rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@dffa30b; obraSocial=com.sample.data.ObraSocial@29852487</declarations>
+      <factHandleIds>7,64</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Private rule [2, 41]</activationId>
+      <rule>Private rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@6d4a65c6; obraSocial=com.sample.data.ObraSocial@3c017078</declarations>
+      <factHandleIds>2,41</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Private rule [2, 41]</activationId>
+      <rule>Private rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@6d4a65c6; obraSocial=com.sample.data.ObraSocial@3c017078</declarations>
+      <factHandleIds>2,41</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Private rule [2, 41]</activationId>
+      <rule>Private rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@6d4a65c6; obraSocial=com.sample.data.ObraSocial@3c017078</declarations>
+      <factHandleIds>2,41</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Retired COVID rule [11, 72, 76, 77]</activationId>
+      <rule>Retired COVID rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@1bcf67e8; departamento=com.sample.data.Departamento@63ec445c; especialidad=com.sample.data.Especialidad@2b8bd14b; paciente=com.sample.data.Paciente@60e5272</declarations>
+      <factHandleIds>11,72,76,77</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Retired COVID rule [11, 72, 76, 77]</activationId>
+      <rule>Retired COVID rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@1bcf67e8; departamento=com.sample.data.Departamento@63ec445c; especialidad=com.sample.data.Especialidad@2b8bd14b; paciente=com.sample.data.Paciente@60e5272</declarations>
+      <factHandleIds>11,72,76,77</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Retired COVID rule [11, 72, 76, 77]</activationId>
+      <rule>Retired COVID rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@1bcf67e8; departamento=com.sample.data.Departamento@63ec445c; especialidad=com.sample.data.Especialidad@2b8bd14b; paciente=com.sample.data.Paciente@60e5272</declarations>
+      <factHandleIds>11,72,76,77</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Plastic surgery rule [12, 78, 85]</activationId>
+      <rule>Plastic surgery rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@5f404594; especialidad=com.sample.data.Especialidad@51dbd6e4; paciente=com.sample.data.Paciente@250b236d</declarations>
+      <factHandleIds>12,78,85</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Plastic surgery rule [12, 78, 85]</activationId>
+      <rule>Plastic surgery rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@5f404594; especialidad=com.sample.data.Especialidad@51dbd6e4; paciente=com.sample.data.Paciente@250b236d</declarations>
+      <factHandleIds>12,78,85</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Plastic surgery rule [12, 78, 85]</activationId>
+      <rule>Plastic surgery rule</rule>
+      <declarations>cierre=com.sample.data.Cierre@5f404594; especialidad=com.sample.data.Especialidad@51dbd6e4; paciente=com.sample.data.Paciente@250b236d</declarations>
+      <factHandleIds>12,78,85</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+  </events>
+</org.drools.core.audit.WorkingMemoryLog>
+</object-stream>
